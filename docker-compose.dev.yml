@@ -26,6 +26,7 @@ services:
       - NODE_DB_URI=mongodb://mongo/habitrpg
       - SESSION_SECRET_KEY=$SESSION_SECRET_KEY
       - SESSION_SECRET_IV=$SESSION_SECRET_IV
+      - PAYPAL_MODE=sandbox
     networks:
       - habitica
     volumes:
