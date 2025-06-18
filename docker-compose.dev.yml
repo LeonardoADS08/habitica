@@ -8,8 +8,8 @@ services:
       - server
     environment:
       - BASE_URL=http://localhost:3000
-      - ENCRYPTION_KEY=$ENCRYPTION_KEY
-      - SESSION_SECRET=$SESSION_SECRET
+      - SESSION_SECRET_KEY=$SESSION_SECRET_KEY
+      - SESSION_SECRET_IV=$SESSION_SECRET_IV
     networks:
       - habitica
     volumes:
@@ -24,8 +24,8 @@ services:
         condition: service_healthy
     environment:
       - NODE_DB_URI=mongodb://mongo/habitrpg
-      - ENCRYPTION_KEY=$ENCRYPTION_KEY
-      - SESSION_SECRET=$SESSION_SECRET
+      - SESSION_SECRET_KEY=$SESSION_SECRET_KEY
+      - SESSION_SECRET_IV=$SESSION_SECRET_IV
     networks:
       - habitica
     volumes:
