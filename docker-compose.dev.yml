@@ -24,6 +24,8 @@ services:
         condition: service_healthy
     environment:
       - NODE_DB_URI=mongodb://mongo/habitrpg
+      - ENCRYPTION_KEY=$ENCRYPTION_KEY
+      - SESSION_SECRET=$SESSION_SECRET
     networks:
       - habitica
     volumes:
