@@ -7,17 +7,12 @@ RUN npm install -g gulp-cli mocha
 
 # Root
 WORKDIR /usr/src/habitica
-COPY ["package.json", "package-lock.json", "./"]
-COPY . /usr/src/habitica
-
-RUN npm install
-
-# install client deps BEFORE building client
+COPY package*.json ./
+COPY . .
+RUN npm install                   # Install root deps for server
 WORKDIR /usr/src/habitica/website/client
-RUN npm install
-
-# Go back to root to continue
-WORKDIR /usr/src/habitica
+RUN npm install                   # Install client deps for Vite etc
+WORKDIR /usr/src/habitica         # Go back to root
 
 RUN npm run postinstall
 RUN npm run client:build
