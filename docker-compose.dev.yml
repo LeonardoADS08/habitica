@@ -10,6 +10,7 @@ services:
       - BASE_URL=http://localhost:3000
       - SESSION_SECRET_KEY=$SESSION_SECRET_KEY
       - SESSION_SECRET_IV=$SESSION_SECRET_IV
+      - FLAG_REPORT_EMAIL=$FLAG_REPORT_EMAIL
     networks:
       - habitica
     volumes:
